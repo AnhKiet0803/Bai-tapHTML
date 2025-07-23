@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shipping Address</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="form-wrapper">
+    <h2>Shipping Address</h2>
+    <form>
+      <div class="row">
+        <div class="form-group error">
+          <label for="firstName">First Name*</label>
+          <input id="firstName" type="text">
+          <p class="error-text">First Name is required</p>
+        </div>
+        <div class="form-group error">
+          <label for="lastName">Last Name*</label>
+          <input id="lastName" type="text">
+          <p class="error-text">Last Name is required</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="address1">Address Line 1*</label>
+        <input id="address1" type="text" value="123">
+      </div>
+
+      <div class="form-group">
+        <label for="address2">Address Line 2</label>
+        <input id="address2" type="text">
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label for="country">Country*</label>
+          <select id="country">
+            <option selected>United States</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="city">City*</label>
+          <input id="city" type="text">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label for="state">State*</label>
+          <select id="state">
+            <option selected>State*</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="zip">Zip*</label>
+          <input id="zip" type="text">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number*</label>
+        <input id="phone" type="text">
+        <small>In case questions arise</small>
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="makeDefault">
+        <label for="makeDefault">Make Default</label>
+      </div>
+
+      <button type="submit">Continue To Billing Information</button>
+    </form>
+  </div>
+</body>
+</html>

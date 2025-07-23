@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BONOBOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/baitapform.css"/>
+</head>
+<body>
+    <header class="section-header">
+        <div class="container">
+            <div class="header">
+                <h1>BONOBOS</h1>
+                <div class="step">
+                    <div class="step-one">
+                        <div class="step-number">1</div>
+                        <p>Shipping</p>
+                    </div>
+                    <div class="line"></div>
+                    <div class="step-one">
+                        <div class="step-number">2</div>
+                        <p>Billing</p>
+                    </div>
+                    <div class="line"></div>
+                    <div class="step-one">
+                        <div class="step-number">3</div>
+                        <p>Review</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="section-main">
+        <div class="container">
+            <div class="row-form">
+                <div class="left">
+                    <h2>Shipping Address</h2>
+                    <form method="get" action="#" >
+                        <div class="row">
+                            <div class="form-group">
+                                <input type="text" name="first name" placeholder="First name*" required/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="last name" placeholder="Last name*" required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="address" placeholder="Address Line 1*"  required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="address" placeholder="Address Line 2*" required/>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                            <input type="country" placeholder="Country*" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="city" placeholder="City*" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <input type="state" placeholder="State*" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="zip" placeholder="Zip*" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="phone" placeholder="Phone numbers*" required>
+                        </div>
+                        <div class="check">
+                            <input type="checkbox" name="terms" value="make default" id="terms">
+                            <label for="terms">Make Default</label> 
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Continue To Billing Information</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="right">
+                    <div class="box">
+                        <div class="title"><strong>Order Summary</strong></div>
+                        <div class="numbers">#312243643</div>
+                        <div class="order">
+                            <div>Items</div>
+                            <div>1</div>
+                        </div>
+                        <div class="order">
+                            <div><strong>Total</strong></div>
+                            <div><strong>$68.00</strong></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="title">Order Details</div>
+                    <hr/>
+                    <div class="product">
+                        <img src="images/T-shirt.png">
+                        <div class="product-info">
+                            <h4>T-Shirt Button-Down</h4>
+                            <p>Reg"XL in Black, Tailored</p>
+                            <div class="qty-box">Qty 1</div>
+                            <p>$68.00</p>
+                        </div>
+                        <div class="remove">&times;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
