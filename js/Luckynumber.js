@@ -5,8 +5,8 @@ var So_tien = prompt("Xin mời nhập số tiền bạn muốn đặt cược")
 So_tien = parseInt(So_tien);
 
 var Lucky_Number = Math.random();
-Tien_thuong = Tien_thuong * 100;
-Tien_thuong = parseInt(Tien_thuong);
+Lucky_Number = Lucky_Number * 100;
+Lucky_Number = parseInt(Lucky_Number);
 
 var Tien_thuong = So_tien * 70;
 
