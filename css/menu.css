@@ -1,0 +1,6 @@
+.item .submenu{            /* ẩn menu */
+    display: none;
+}
+.item.active .submenu{     /* hiện menu */
+    display: block;
+}

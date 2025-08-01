@@ -1,0 +1,82 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    line-height: 1.35;
+    height: 100vh;
+    background-color:bisque;
+}
+.btn{
+    background: rgb(104, 184, 238);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn:hover{
+    background: #2481e6;
+}
+.modal.active{
+    display: block;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 1;
+}
+.modal{
+    display: none;
+    background: white;
+    border-radius: 15px;
+    width: 400px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+    transition: all 300ms;
+}
+h1{
+    font-size: 24px;
+}
+p{
+    color: #666;
+}
+.modal label{
+    display: flex;
+    margin-bottom: 5px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.modal input[type="text"]{
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.buttons{
+    display: flex;
+    gap: 30px;
+}
+.continue{
+    background: #FF6B6B;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    flex: 1;
+    cursor: pointer;
+}
+.cancel{
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-weight: bold;
+}

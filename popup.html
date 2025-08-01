@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POPUP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/popup.css"/>
+</head>
+<body>
+    <button class="btn" onclick="OpenModal();">Show Modal</button>
+    <div class="modal" id="mymodal">
+        <h1>Create a post</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium necessitatibus omnis, eaque ratione sunt commodi.</p>
+        <label>Campaign Name</label>
+        <input type="text" placeholder="Ex. Get 50% off" required/>
+        <div class="buttons">
+            <button class="continue" onclick="next();">Continue</button>
+            <button class="cancel" onclick="previous();">Cancel</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function OpenModal(){
+            var modal = document.getElementById("mymodal");
+            modal.classList.add("active");
+        }
+        function previous(){
+            var modal = document.getElementById("mymodal");
+            modal.classList.remove("active");
+        }
+        function next(){
+            alert("Không có phần tiếp theo đâu :))");
+            previous();// ẩn luôn modal
+        }
+    </script>
+</body>
+</html>
