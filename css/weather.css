@@ -1,0 +1,36 @@
+ body{
+    margin: 0;
+    background-color: white;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.weather-box{
+    display: flex;
+    align-items: center;
+    background: #2a2a2a;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+.temp{
+    font-size: 60px;
+    font-weight: bold;
+}
+.unit{
+    font-size: 20px;
+    margin-left: 5px;
+    vertical-align: top;
+}
+.info{
+    color: #c5c3c3;
+    margin-left: 30px;
+    line-height: 1.6;
+    font-size: 18px;
+}
+.partly-cloudy{
+    width: 70px;
+    height: 70px;
+}
