@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự báo thời tiết</title>
+    <style>
+        body { font-family: sans-serif; background: #f0f0f0; }
+        .profile-card { display: flex; flex-wrap: wrap; gap: 10px; }
+        .card {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            width: calc(25% - 10px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .temp { font-size: 24px; font-weight: bold; }
+        .icon img { width: 50px; }
+    </style>
+</head>
+<body>
+    <main class="section main">
+        <div class="container">
+            <div class="profile-card" id="weather-cards">
+                <!-- Thẻ mẫu -->
+                <div class="card">
+                    <div class="date">Ngày</div>
+                    <div class="temp-box">
+                        <div class="temp"><span class="temps">0</span><sup>°</sup>C</div>
+                        <div class="icon"><img src="" class="icons"></div>
+                    </div>
+                    <div class="desc">Mô tả</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+    const url = "https://api.openweathermap.org/data/2.5/forecast?q=hanoi&appid=09a71427c59d38d6a34f89b47d75975c&units=metric&lang=vi";
+
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            const list = data.list.slice(0, 16); // Lấy 16 dự báo
+            const container = document.getElementById("weather-cards");
+            const template = container.querySelector(".card"); // Ô mẫu
+
+            // Xóa nội dung mẫu (để thay bằng dữ liệu thật)
+            container.innerHTML = "";
+
+            list.forEach(item => {
+                // Clone thẻ mẫu
+                const card = template.cloneNode(true);
+
+                // Gán dữ liệu
+                card.querySelector(".date").innerText = item.dt_txt;
+                card.querySelector(".temps").innerText = Math.round(item.main.temp);
+                card.querySelector(".icons").src = `https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`;
+                card.querySelector(".desc").innerText = item.weather[0].description;
+
+                // Thêm vào container
+                container.appendChild(card);
+            });
+        });
+    </script>
+</body>
+</html>

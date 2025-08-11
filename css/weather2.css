@@ -1,0 +1,22 @@
+body{
+    font-size: 14px;
+    font-family: sans-serif;
+    background-image: url(../images/ww.jpg);
+    background-repeat: cover;
+}
+.row{
+    margin-top: 30px;
+}
+.item{
+    background-color: #00000050; /*#000000 là màu nền đen thêm số 50 là chỉ lấy 50% điểm ảnh số này có thể thay đổi tuỳ mình*/
+    height: 150px;
+}
+.item .card-body{
+    height: auto;
+}
+.item h3{
+    font-size: 0.9rem;
+}
+.item img{
+    transform: translate(150px,-100px);
+}
