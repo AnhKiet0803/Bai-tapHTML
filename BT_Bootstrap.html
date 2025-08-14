@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eyeshadow Palette with Mirror</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/Bootstrap.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom position-relative">
+        <div class="container-fluid">
+            <!-- Nút thu gọn menu -->
+            <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" 
+                    aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Menu bên trái -->
+            <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav me-3">
+                <li class="nav-item">
+                <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="https://www.google.com/">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">About us</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">City</a></li>
+                    <li><a class="dropdown-item" href="#">Find a store</a></li>
+                    <li><a class="dropdown-item" href="#">Contact us</a></li>
+                </ul>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <!-- Search bên trái -->
+            <form class="d-flex me-auto" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search">
+                <button class="btn btn-search-circle" type="submit">
+                    <i class="bi bi-search"></i>
+                </button>
+            </form>
+            <!-- Account bên phải -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#LoginModal">Account</a>
+                </li>
+                <li class="nav-item">
+                <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#RegisterModal">Register</a>
+                </li>
+            </ul>
+            </div>
+            <!-- Chữ Navbar ở giữa tuyệt đối -->
+            <span class="navbar-brand navbar-center">Logo ở đây</span>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="row g-4 align-items-stretch" id="product">
+                <!-- Middle: Thumbnails -->
+                <div class="col-md-2 d-flex flex-column align-items-center gap-2" id="Middle">
+                    <img src="thumb1.jpg" class="thumb-img-vertical"  onclick="changeImage(this)">
+                    <img src="thumb2.jpg" class="thumb-img-vertical"  onclick="changeImage(this)">
+                    <img src="thumb3.jpg" class="thumb-img-vertical"  onclick="changeImage(this)">
+                </div>
+                <!-- Left: Main Image + Story -->
+                <div class="col-md-5">
+                    <div class=" hover mb-3">
+                        <img id="mainImage" src="#" class="main-img">
+                    </div>
+                    <!-- Story -->
+                    <div class="p-4 bg-light rounded mt-4">
+                        <h5 class="text-uppercase text-center mb-3">The story behind</h5>
+                        <p class="text-muted" id="story">
+                            Based on the Brides et Destin scarf design...
+                        </p>
+                    </div>
+                </div>
+                <!-- Right: Info + Accordion -->
+                <div class="col-md-5 d-flex flex-column">
+                    <!-- Card chứa tiêu đề, màu và nút mua -->
+                    <div class="card mb-3 p-3">
+                        <div class="d-flex gap-2 mb-3">
+                            <img src="#" id="thumb-img" style="width:40%;">
+                        </div>
+                        <!-- Tiêu đề và giá -->
+                        <h4 class="fw-light mb-2" id="name">tên sản phẩm</h4>
+                        <h5 class="fs-5 fw-bold mb-3">Price: <span id="price" style="text-decoration: line-through;">giá tiền</span>$</h5>
+                        <h6 class="fs-5 fw-bold mb-3">Sale: <span id="sale"></span>$</h6>
+                        <p>AvailabilityStatus: <span id="status"></span></p>
+                        <!-- Nút add to cart -->
+                        <button class="btn btn-dark w-100 my-4">Add to cart</button>
+                        <div class="">
+                            <h4>Product description</h4>
+                            <h6>Brand: <span id="brand"></span>(<span id="code"></span>)</h6>
+                            <p>Weight: <span id="wei"></span></p>
+                            <p>Width: <span id="width"></span></p>
+                            <p>Height: <span id="hei"></span></p>
+                            <p>Depth: <span id="dep"></span></p>
+                        </div>
+                    </div>
+                    <!-- Accordion -->
+                    <div class="card mb-3 mt-auto">
+                        <div class="accordion" id="productDetails">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#care">
+                                        Care
+                                    </button>
+                                </h2>
+                                <div id="care" class="accordion-collapse collapse" data-bs-parent="#productDetails">
+                                    <div class="accordion-body">
+                                        Chức năng đang phát triển
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#delivery">
+                                        Delivery & Returns
+                                    </button>
+                                </h2>
+                                <div id="delivery" class="accordion-collapse collapse" data-bs-parent="#productDetails">
+                                    <div class="accordion-body">
+                                        <p>WarrantyInformation: <span id="guarantee"></span></p>
+                                        <p>MinimumOrderQuantity: <span id="order"></span></p>
+                                        <p>ShippingInformation: <span id="ship"></span></p>
+                                        <p>ReturnPolicy: <span id="refund"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#gifting">
+                                        Review
+                                    </button>
+                                </h2>
+                                <div id="gifting" class="accordion-collapse collapse" data-bs-parent="#productDetails">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--nút account-->
+    <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Account</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email or Telephone</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email or telephone with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Log in</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--nút register-->
+    <div class="modal fade" id="RegisterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Register an Account</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="validationCustom01" class="form-label">Full name</label>
+                                <input type="name" class="form-control" id="validationCustom01" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="validationCustom02" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="validationCustom02" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="validationCustom03" class="form-label">Date of Birth</label>
+                                <input type="date" class="form-control" id="validationCustom03" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="validationCustom04" class="form-label">Telephone</label>
+                                <input type="tel" class="form-control" id="validationCustom04" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="validationCustom05" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="validationCustom05" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="validationCustom06" class="form-label">Confirm Password</label>
+                                <input type="cofirm" class="form-control" id="validationCustom06" required>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                    <label class="form-check-label" for="invalidCheck">
+                                        Agree to terms and conditions
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        You must agree before submitting.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="register">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        (() => {
+        'use strict' // Lấy tất cả các biểu mẫu muốn áp dụng các kiểu xác thực Bootstrap tùy chỉnh
+        const forms = document.querySelectorAll('.needs-validation')
+        // Vòng lặp nếu chưa điền hết thông tin thì ngăn submit
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+            form.classList.add('was-validated')
+            }, false)
+        })
+        })()
+    </script>
+    <script type="text/javascript">
+        function product(){
+            const url = `https://dummyjson.com/products/2`;
+            fetch(url).then(rs=>rs.json())
+            .then(rs=>{
+                document.getElementById("mainImage").src=rs.thumbnail;
+                document.getElementById("story").innerText=rs.description;
+                document.getElementById("thumb-img").src=rs.images;
+                document.getElementById("name").innerText=rs.title;
+                document.getElementById("price").innerText=rs.price;
+                document.getElementById("sale").innerText=rs.discountPercentage;
+                document.getElementById("status").innerText=rs.availabilityStatus;
+                document.getElementById("brand").innerText=rs.brand;
+                document.getElementById("code").innerText=rs.sku;
+                document.getElementById("wei").innerHTML=rs.weight;
+                document.getElementById("width").innerText=rs.dimensions.width;
+                document.getElementById("hei").innerText=rs.dimensions.height;
+                document.getElementById("dep").innerText=rs.dimensions.depth;
+                document.getElementById("guarantee").innerText=rs.warrantyInformation;
+                document.getElementById("order").innerText=rs.minimumOrderQuantity;
+                document.getElementById("ship").innerText=rs.shippingInformation;
+                document.getElementById("refund").innerText=rs.returnPolicy;
+            })
+        }
+        product();
+    </script>
+    <script type="text/javascript">
+        function gifting(){
+            const url = `https://dummyjson.com/products/2`;
+            fetch(url).then(rs=>rs.json())
+            .then(rs=>{
+                const list = rs.reviews; // array
+                list.map(e=>{
+                    const item =`<div class="card border-0 shadow-sm mb-3 rounded-3">
+                                    <div class="card-body">
+                                        <p>Rating: <span>${e.rating}</span></p>
+                                        <p>Comment: <span>${e.comment}</span></p>
+                                        <p>Date: <span>${e.date}</span></p>
+                                        <p>Reviewer: <span>${e.reviewerName}</span></p>
+                                    </div>        
+                                </div>`;
+                    document.getElementById("gifting").innerHTML +=item;
+                })
+            });
+        }
+        gifting();
+    </script>
+</body>
+</html>
