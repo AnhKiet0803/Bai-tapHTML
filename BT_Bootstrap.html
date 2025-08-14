@@ -115,7 +115,7 @@
                                 </h2>
                                 <div id="care" class="accordion-collapse collapse" data-bs-parent="#productDetails">
                                     <div class="accordion-body">
-                                        Khách hàng là thượng đế, dù khách hàng có hách dịch đến đâu cũng phải yêu khách
+                                        Khách hàng là thượng đế, dù khách hàng có hách dịch đến đâu cũng không được đấm khách.
                                     </div>
                                 </div>
                             </div>
@@ -127,10 +127,10 @@
                                 </h2>
                                 <div id="delivery" class="accordion-collapse collapse" data-bs-parent="#productDetails">
                                     <div class="accordion-body">
-                                        <p>WarrantyInformation: <span id="guarantee"></span></p>
-                                        <p>MinimumOrderQuantity: <span id="order"></span></p>
-                                        <p>ShippingInformation: <span id="ship"></span></p>
-                                        <p>ReturnPolicy: <span id="refund"></span></p>
+                                        <p><b>WarrantyInformation:</b> <span id="guarantee"></span></p>
+                                        <p><b>MinimumOrderQuantity:</b> <span id="order"></span></p>
+                                        <p><b>ShippingInformation:</b> <span id="ship"></span></p>
+                                        <p><b>ReturnPolicy:</b> <span id="refund"></span></p>
                                     </div>
                                 </div>
                             </div>
@@ -275,20 +275,33 @@
             })
         }
         product();
-    </script>
-    <script type="text/javascript">
         function gifting(){
             const url = `https://dummyjson.com/products/2`;
             fetch(url).then(rs=>rs.json())
             .then(rs=>{
-                const list = rs.reviews; // array
+                const list = rs.reviews; 
+                // Hàm render sao bằng Bootstrap Icons
+                function renderStars(rating) {
+                    let stars = '';
+                    for (let i = 1; i <= 5; i++) {
+                        if (i <= Math.floor(rating)) {
+                            stars += '<i class="bi bi-star-fill text-warning"></i>'; // sao đầy
+                        } else if (i - rating < 1 && rating % 1 >= 0.5) {
+                            stars += '<i class="bi bi-star-half text-warning"></i>'; // nửa sao
+                        } else {
+                            stars += '<i class="bi bi-star text-warning"></i>'; // sao rỗng
+                        }
+                    }
+                    return stars;
+                }
+                document.getElementById("gifting").innerHTML = ""; // clear trước
                 list.map(e=>{
                     const item =`<div class="card border-0 shadow-sm mb-3 rounded-3">
                                     <div class="card-body">
-                                        <p>Rating: <span>${e.rating}</span></p>
-                                        <p>Comment: <span>${e.comment}</span></p>
-                                        <p>Date: <span>${e.date}</span></p>
-                                        <p>Reviewer: <span>${e.reviewerName}</span></p>
+                                        <p><b>Rating</b>: <span>${renderStars(e.rating)}</span></p>
+                                        <p><b>Comment</b>: <span>${e.comment}</span></p>
+                                        <p><b>Date</b>: <span>${e.date}</span></p>
+                                        <p><b>Reviewer</b>: <span>${e.reviewerName}</span></p>
                                     </div>        
                                 </div>`;
                     document.getElementById("gifting").innerHTML +=item;
